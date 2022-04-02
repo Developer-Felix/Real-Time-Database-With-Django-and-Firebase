@@ -1,10 +1,18 @@
-import pyrebase
 
 from django.shortcuts import render
 
-from ...djfirebase.firebase import config
-
+from ...djfirebase.firebase import database,authenticate
 
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+    name = database.child("Data").child("name").get().val()
+    age = database.child("Data").child("age").get().val()
+    course = database.child("Data").child("course").get().val()
+    school = database.child("Data").child("school").get().val()
+    data = {
+        "name" : name,
+        "age" :age,
+        "course":course,
+        "school":school
+    }
+    return render(request,'index.html',data)

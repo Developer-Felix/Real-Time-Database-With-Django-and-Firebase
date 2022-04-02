@@ -1,3 +1,6 @@
+import pyrebase
+
+
 config = {
   "apiKey": "AIzaSyAOqvcMRPFT0P68aW-50MtlL7aUuh8O-XA",
   "authDomain": "djfirebase-22d59.firebaseapp.com",
@@ -8,3 +11,11 @@ config = {
   "measurementId": "G-N0YTTH16SP",
   "databaseURL": "https://djfirebase-22d59-default-rtdb.firebaseio.com",
 }
+
+
+
+firebase = pyrebase.initialize_app(config)
+
+authenticate = firebase.auth()
+database = firebase.database()
+
