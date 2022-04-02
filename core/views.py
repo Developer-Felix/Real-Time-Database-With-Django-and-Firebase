@@ -1,7 +1,7 @@
 
 from django.shortcuts import render
 
-from ...djfirebase.firebase import database,authenticate
+from core.firebase import database,authenticate
 
 # Create your views here.
 def index(request):
